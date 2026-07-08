@@ -5,7 +5,7 @@ Tecnologias Utilizadas
 
 *   Front-end:HTML5, CSS3 (Bootstrap para estilização), JavaScript (Fetch API para comunicação assíncrona).
 *   Back-end: Python 3.11+, Flask (Framework Web).
-*   Banco de Dados:** PostgreSQL hospedado no Supabase.
+*   Banco de Dados:PostgreSQL hospedado no Supabase.
 *   Bibliotecas Python: `supabase`, `flask-cors`.
 
  Modelagem do Banco de Dados (SQL)
@@ -48,7 +48,7 @@ pip install supabase
 pip install flask-cors
 python app.py
 
--- Inserindo 5 aeronaves (Entidade Forte)
+Inserindo 5 aeronaves (Entidade Forte)
 INSERT INTO Aviao (N_aviao, Modelo, Capacidade_passageiros, Data_aquisicao, Companhia_Aerea) VALUES
 (10, 'Boeing 737', 180, '2015-03-20', 'Latam'),
 (20, 'Airbus A320', 150, '2018-06-15', 'Azul'),
@@ -56,7 +56,7 @@ INSERT INTO Aviao (N_aviao, Modelo, Capacidade_passageiros, Data_aquisicao, Comp
 (40, 'Embraer 195', 110, '2020-01-10', 'Azul'),
 (50, 'Airbus A350', 300, '2021-08-24', 'Latam');
 
--- Inserindo 5 voos (Depende de Aviao)
+Inserindo 5 voos (Depende de Aviao)
 INSERT INTO Voo (Origem, Destino, Data_saida, Data_pouso, Aviao_N_aviao) VALUES
 ('Rio de Janeiro', 'São Paulo', '2026-07-10 08:00:00', '2026-07-10 09:00:00', 10),
 ('São Paulo', 'Salvador', '2026-07-11 12:00:00', '2026-07-11 14:30:00', 20),
@@ -64,7 +64,7 @@ INSERT INTO Voo (Origem, Destino, Data_saida, Data_pouso, Aviao_N_aviao) VALUES
 ('Belo Horizonte', 'Brasília', '2026-07-14 15:00:00', '2026-07-14 16:15:00', 40),
 ('Curitiba', 'Rio de Janeiro', '2026-07-15 10:00:00', '2026-07-15 11:30:00', 10);
 
--- Inserindo 5 clientes (Depende de Voo)
+Inserindo 5 clientes (Depende de Voo)
 INSERT INTO Cliente (CPF, Nome, Telefone, Data_nascimento, id_voo) VALUES
 ('11122233344', 'Augusto Almeida', '21983438456', '2001-02-20', 1),
 ('55566677788', 'Alberto Guiles', '21983438609', '2000-09-24', 2),
@@ -74,7 +74,7 @@ INSERT INTO Cliente (CPF, Nome, Telefone, Data_nascimento, id_voo) VALUES
 
 TRUNCATE TABLE Cliente, Voo, Aviao RESTART IDENTITY CASCADE;
 
--- Retorna a quantidade de passageiros por voo, filtrando apenas voos com mais de 1 passageiro
+Retorna a quantidade de passageiros por voo, filtrando apenas voos com mais de 1 passageiro
 SELECT 
     v.ID_voo,
     v.Origem,
@@ -85,7 +85,7 @@ INNER JOIN Cliente c ON v.ID_voo = c.id_voo
 GROUP BY v.ID_voo, v.Origem, v.Destino
 HAVING COUNT(c.CPF) > 1;
 
--- Lista aviões com capacidade maior do que QUALQUER aeronave da companhia 'Azul'
+Lista aviões com capacidade maior do que QUALQUER aeronave da companhia 'Azul'
 SELECT N_aviao, Modelo, Capacidade_passageiros, Companhia_Aerea
 FROM Aviao
 WHERE Capacidade_passageiros > ANY (
@@ -93,8 +93,7 @@ WHERE Capacidade_passageiros > ANY (
     FROM Aviao 
     WHERE Companhia_Aerea = 'Azul'
 );
-
--- Lista apenas os voos que possuem pelo menos um passageiro associado
+Lista apenas os voos que possuem pelo menos um passageiro associado
 SELECT v.ID_voo, v.Origem, v.Destino, v.Data_saida
 FROM Voo v
 WHERE EXISTS (
