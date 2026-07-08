@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Clientes - AeroSystem</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="menu-lateral">
+            <h2>AeroSystem</h2>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="clientes.html">Gestão de Clientes</a></li>
+                <li><a href="avioes.html">Gestão de Aviões</a></li>
+                <li><a href="voos.html">Gestão de Voos</a></li>
+                <li><a href="consultas.html">Consultas Avançadas</a></li>
+            </ul>
+        </div>
+
+        <div class="conteudo">
+            <h1>Gestão de Clientes</h1>
+            
+            <form id="form-cliente">
+                <label>CPF:</label><br>
+                <input type="text" id="cli-cpf" required><br><br>
+
+                <label>Nome:</label><br>
+                <input type="text" id="cli-nome" required><br><br>
+
+                <label>Data de Nascimento:</label><br>
+                <input type="date" id="cli-nasc" required><br><br>
+
+                <label>Telefone:</label><br>
+                <input type="text" id="cli-tel" placeholder="Ex: 21999999999" required><br><br>
+
+               
+                <label>ID do Voo:</label>
+                <input type="number" id="voo_id" placeholder="Ex: 2" required>
+
+                <button type="submit">Salvar cliente</button>
+            </form>
+
+            <br><hr><br>
+
+            <table id="tabela-clientes">
+                <thead>
+                    <tr>
+                        <th>CPF</th>
+                        <th>Nome</th>
+                        <th>Data de Nasc.</th>
+                        <th>Telefone</th>
+                        <th>id_voo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-clientes"></tbody>
+            </table>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

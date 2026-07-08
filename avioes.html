@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Aviões</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>AeroSystem</h2>
+        <a href="index.html">Início</a>
+        <a href="clientes.html">Gestão de Clientes</a>
+        <a href="avioes.html">Gestão de Aviões</a>
+        <a href="voos.html">Gestão de Voos</a>
+        <a href="consultas.html">Consultas Avançadas</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Gestão de Aviões</h1>
+        
+        <form id="form-aviao">
+            <label>Número do Avião (ID):</label>
+            <input type="number" id="aviao-n" required>
+
+            <label>Modelo:</label>
+            <input type="text" id="aviao-modelo" required>
+
+            <label>Capacidade:</label>
+            <input type="number" id="aviao-cap" required>
+
+            <label>Data de Aquisição:</label>
+            <input type="date" id="aviao-data" required>
+
+            <label>Companhia Aérea:</label>
+            <input type="text" id="aviao-cia" required>
+
+            <button type="submit">Salvar Avião</button>
+        </form>
+
+        <table id="tabela-avioes">
+            <thead>
+                <tr>
+                    <th>Nº Avião</th>
+                    <th>Modelo</th>
+                    <th>Capacidade</th>
+                    <th>Data Aquisição</th>
+                    <th>Cia Aérea</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-avioes"></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Aviões</title>
+    
+    <style>
+        body { margin: 0; display: flex; font-family: Arial, sans-serif; background-color: #f4f4f4; }
+        
+        /* Barra Lateral */
+        .sidebar { width: 250px; background-color: #0056b3; color: white; height: 100vh; padding: 20px; }
+        .sidebar h2 { font-size: 1.5rem; margin-bottom: 30px; }
+        .sidebar a { display: block; color: white; text-decoration: none; padding: 10px; margin-bottom: 5px; background: #004494; border-radius: 4px; }
+        .sidebar a:hover { background: #003366; }
+
+        /* Conteúdo Principal */
+        .main-content { flex: 1; padding: 30px; }
+        
+        /* Formulario e Tabela */
+        form { background: white; padding: 20px; border-radius: 8px; border: 1px solid #ccc; width: 400px; }
+        input { width: 100%; padding: 8px; margin-bottom: 15px; box-sizing: border-box; }
+        table { width: 100%; border-collapse: collapse; margin-top: 30px; background: white; }
+        th { background-color: #0056b3; color: white; padding: 12px; text-align: left; }
+        td { padding: 10px; border: 1px solid #ddd; }
+        button { background-color: #0056b3; color: white; padding: 10px 20px; border: none; cursor: pointer; border-radius: 4px; }
+    </style>
+</head>

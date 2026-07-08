@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Consultas - AeroSystem</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="menu-lateral">
+            <h2>AeroSystem</h2>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="clientes.html">Gestão de Clientes</a></li>
+                <li><a href="avioes.html">Gestão de Aviões</a></li>
+                <li><a href="voos.html">Gestão de Voos</a></li>
+                <li><a href="consultas.html">Consultas Avançadas</a></li>
+            </ul>
+        </div>
+
+        <div class="conteudo">
+            <h1>Consultas de Sistema</h1>
+            
+            <div style="background-color: white; padding: 15px; border: 1px solid #ccc; margin-bottom: 20px;">
+                <h3>Pesquisa simples (SELECT + WHERE)</h3>
+                <p>Busca de cliente por nome.</p>
+                <form id="form-consulta-simples">
+                    <label>Nome do cliente:</label>
+                    <input type="text" id="busca-nome" placeholder="Ex: Fulano de Tal">
+                    <button type="submit">Pesquisar</button>
+                </form>
+            </div>
+
+            <div style="background-color: white; padding: 15px; border: 1px solid #ccc; margin-bottom: 20px;">
+                <h3>Pesquisa Simples 2 (Voos por Destino)</h3>
+                <p>Busca de voos por cidade de destino.</p>
+                <form id="form-consulta-destino">
+                    <label>Cidade de Destino:</label>
+                    <input type="text" id="busca-destino" placeholder="Ex: Rio de Janeiro" required>
+                    <button type="submit">Buscar Voos</button>
+                </form>
+            </div>
+            <div style="background-color: white; padding: 15px; border: 1px solid #ccc;">
+                <h3>Pesquisa avançada (INNER JOIN)</h3>
+                <p>Lista de clientes que compraram para voo específico.</p>
+                <form id="form-consulta-avancada">
+                    <label>Código do voo:</label>
+                    <input type="text" id="busca-voo" placeholder="Ex: G3-1044">
+                    <button type="submit">Fazer busca</button>
+                </form>
+            </div>
+
+            <div style="background-color: white; padding: 15px; border: 1px solid #ccc; margin-bottom: 20px;">
+                <h3>Pesquisa Avançada 2 (Subconsulta NOT IN)</h3>
+                <p>Clientes que NÃO possuem viagens marcadas em um modelo específico de avião.</p>
+                <form id="form-consulta-subquery">
+                    <label>Modelo do Avião:</label>
+                    <input type="text" id="busca-modelo-aviao" placeholder="Ex: Boeing 737" required>
+                    <button type="submit">Aplicar Subconsulta</button>
+                </form>
+            </div>
+            <br><hr><br>
+            
+            <h3>Resultado da consulta</h3>
+            <table id="tabela-resultados">
+                <thead>
+                    <tr>
+                        <th>Resultado 1</th>
+                        <th>Resultado 2</th>
+                        <th>Resultado 3</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-resultados">
+                    <tr>
+                        <td colspan="3" style="text-align: center;">Nenhuma consulta realizada ainda.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <script src="script.js"></script>
+    </body>
+</html>

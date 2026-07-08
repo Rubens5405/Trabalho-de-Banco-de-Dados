@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Voos</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            background-color: #f4f7f6;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #0056b3;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h2 { font-size: 1.5rem; margin-bottom: 30px; }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 4px;
+        }
+
+        .sidebar a:hover { background-color: #004494; }
+
+        .conteudo { flex: 1; padding: 30px; }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+
+        form input, form select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        table { width: 100%; border-collapse: collapse; background: white; }
+
+        table thead { background-color: #0056b3; color: white; }
+
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>AeroSystem</h2>
+        <a href="index.html">Início</a>
+        <a href="clientes.html">Gestão de Clientes</a>
+        <a href="avioes.html">Gestão de Aviões</a>
+        <a href="voos.html">Gestão de Voos</a>
+        <a href="consultas.html">Consultas Avançadas</a>
+    </div>
+
+    <div class="conteudo">
+        <h1>Gestão de Voos</h1>
+        
+        <form id="form-voo">
+            <label>ID Voo:</label>
+            <input type="text" id="id_voo" placeholder="ID do Voo">
+
+            <label>Origem:</label>
+            <input type="text" id="origem" placeholder="Origem">
+
+            <label>Destino:</label>
+            <input type="text" id="destino" placeholder="Destino">
+
+            <label>Data:</label>
+            <input type="date" id="data_voo">
+            
+            <label>Avião:</label>
+            <select id="aviao_id">
+                <option value="">Selecione um Avião</option>
+            </select>
+            
+            <button type="submit">Salvar Voo</button>
+        </form>
+
+        <table id="tabela-voos">
+            <thead>
+                <tr>
+                    <th>ID Voo</th>
+                    <th>Origem</th>
+                    <th>Destino</th>
+                    <th>Data</th>
+                    <th>Avião</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
