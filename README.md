@@ -41,7 +41,7 @@ CREATE TABLE Cliente (
     id_voo INT,
     FOREIGN KEY (id_voo) REFERENCES Voo(ID_voo)
 );
-
+(NO CMD)
 cd Caminho/Ate/A/Pasta/TrabalhoBD
 pip install flask
 pip install supabase
