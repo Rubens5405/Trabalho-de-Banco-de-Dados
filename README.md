@@ -1,4 +1,4 @@
-# Trabalho-de-Banco-de-Dados
+# Trabalho de Banco de Dados
 # Sistema de Gerenciamento de Passagens Aéreas
 
 Tecnologias Utilizadas
